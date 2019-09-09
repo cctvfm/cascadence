@@ -11,7 +11,7 @@ The 4 potentiometers adjust the pitch of each step.
 Switching the toggle to the left or right enables editing of that sequencer, while the other remains unchanged
 
 ## ADSR - a dual analog modelling envelope
-Simulates a capacitor charging and discharging at the attack, decay, and sustain stages by modelling a first-order filter
+Simulates a capacitor charging and discharging at the attack, decay, and release stages by modelling a first-order filter
 
 Clock in - trigger/gate to start both envelopes
 
