@@ -31,3 +31,20 @@ Potentiometers from top to bottom:
 4. Randomness - The likelyhood of a pulse state being inverted. At full counter-clockwise, 0 randomness is added. At full clockwise every pulse will be inverted (no pulse becomes pulse, pulse becomes no pulse). In between min and max, the sequence will change at every iteration. The 'coin' is flipped every time a pulse is about to be sent out.
 
 Toggle Switch - changes active editing of sequence A or B.
+
+## Turing Machine
+
+Algorithmic Sequence generator with variable probability of mutation. Implemented here with a linked pulse output and optional quantizer.
+
+Clock in - Trigger input
+
+Potentiometers from top to bottom:
+1. Randomness - this is the big knob on the original TM. Fully clockwise and your loop is repeated, fully counter clockwise, and your loop is inverted creating a mirrored loop twice as long as the 'length' setting. In the middle is a 50% chance of mutation at every iteration
+2. Length - adjustable from 1 to 16. This is the number of bits in the shift register. The output is scaled to the bit length, and the output is taken from the available bits you have set here, for example if length is 3, you get a 3 bit output scaled to the full range of the output, limited by the 'Scale' setting.
+3. Scale - the range from the lowest to the highest voltage outputed. Fully clockwise is the max range, fully counter clockwise you get no output.
+4. Offset - Shifts the sequence up but preserving relationships
+
+Toggle Switch - Engages a Chromatic Quantizer. Right is quantized, Left is unquantized.
+
+A Output - The CV sequence output
+B Output - Sends a pulse if the LSB in the shift register is '1'. You can use this in conjunction with the CV sequence to create interesting patterns.
