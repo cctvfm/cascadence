@@ -49,3 +49,7 @@ Toggle Switch - Engages a Chromatic Quantizer. Right is quantized, Left is unqua
 A Output - The CV sequence output
 
 B Output - Sends a pulse if the LSB in the shift register is '1'. You can use this in conjunction with the CV sequence to create interesting patterns.
+
+## Template
+
+A Simple template to get you started with writing your own Cascadence code. Includes the DAC functions and pin definitions so all the hard work is done for you.
