@@ -1,10 +1,10 @@
 #include <tinySPI.h>
 
-//Euclidean Sequencer
+//TuringMachine
 //For Cascadence
 //Developed with Modular Seattle for Velocity 2019
     
-#define MAXSEQLENGTH 16  //+1 because 0 is a step
+#define MAXSEQLENGTH 16  
 const int GAIN_1 = 0x1;
 const int GAIN_2 = 0x0;
 const int NO_SHTDWN = 1;
@@ -31,7 +31,7 @@ char seq_randomness;
 unsigned int seq_scale;
 unsigned int seq_shift;
 
-unsigned int maxvalues[]={0,1,3,7,15,31,63,127,255,511,1023,2047,4095,8191,16383,32767,65535};
+unsigned int maxvalues[]={0,1,3,7,15,31,63,127,255,511,1023,2047,4095,8191,16383,32767,65535};  //max posible values for a given bit length
 
 const int BITSPERSEMITONE=83;
 
