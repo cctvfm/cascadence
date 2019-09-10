@@ -1,4 +1,4 @@
-In this folder you will find the firmwares available for Cascadence.
+In this folder you will find the firmwares available for Cascadence. If you wish to submit your own firmware please get in touch with me (fil@cctv.fm).
 
 They are all written in Arduino, and rely on tinySPI (https://github.com/JChristensen/tinySPI)
 
@@ -47,4 +47,5 @@ Potentiometers from top to bottom:
 Toggle Switch - Engages a Chromatic Quantizer. Right is quantized, Left is unquantized.
 
 A Output - The CV sequence output
+
 B Output - Sends a pulse if the LSB in the shift register is '1'. You can use this in conjunction with the CV sequence to create interesting patterns.
