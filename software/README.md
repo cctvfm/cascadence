@@ -23,6 +23,8 @@ You need to move the CCTV folder as well as it's contents. Your structure should
 
 You can test that this worked by opening Arduino. Under `Tools --> Board` you should now see `CCTV - Cascadence (Attiny84 5V 8Mhz)`
 
+This is easier to do by downloading this entire repository and unzipping.
+
 ## 2. Micronucleus
 
 There's a few extra steps depending on what OS you're using
