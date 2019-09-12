@@ -1,0 +1,16 @@
+menu.cpu=Processor
+
+################################################################################
+
+CCTV.name=Cascadence (ATtiny84, 5V, 8Mhz)
+
+CCTV.upload.using=micronucleusprog
+CCTV.upload.protocol=usb
+CCTV.upload.tool=micronucleus
+CCTV.upload.maximum_size=6012
+
+CCTV.build.mcu=attiny84
+CCTV.build.f_cpu=8000000L
+CCTV.build.board=Cascadence
+CCTV.build.core=arduino:arduino
+CCTV.build.variant=tiny14
