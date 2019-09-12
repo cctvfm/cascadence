@@ -7,6 +7,8 @@ There are two parts that you need
 1. An Arduino Board definition for the Attiny84, configured to use Micronucleus as the programmer
 2. Micronucleus to communicate with the Attiny84
 
+Please do not connect the micro usb and eurorack power at the same time, as this may cause over-current warnings on some computers.
+
 ## 1. Board Definition
 
 Included are the group of files you need to move to the Arduino board definition folder. On Mac this is in
