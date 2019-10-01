@@ -31,19 +31,23 @@ This is easier to do by downloading this entire repository and unzipping.
 
 There's a few extra steps depending on what OS you're using
 
+You need to pull the full repository from [Micronucleus Github](https://github.com/micronucleus/micronucleus). On the main Github Page for Micronucleus, click 'Clone or Download', Download Zip, then extract the Zip file on your local machine.
+
 ### OSX
 
-Run the following command to install libusb
+First, [install homebrew](https://brew.sh/) if you haven't already
 
-```brew install libusb-compat```
+then, open a command terminal and enter:
 
-copy the included micronucleus executable to `~/Documents/Arduino/hardware/tools/`
+cd <micronucleus Directory>/commandline
+brew install libusb-compat
+make
 
-*note* not the .exe file, just **micronucleus**
+Navigate to /commandline. Copy the micronucleus executable in the commandline directory to Arduino/hardware/tools.
 
 ### Windows
 
- In Windows, copy the included **micronucleus.exe** to \/hardware/tools. 
+ In Windows, copy  **micronucleus.exe** to Arduino/hardware/tools. **micronucleus.exe** is found in **micronucleus/commandline/builds/Windows/**
  
  Unfortunately, Windows doesn't know what to do with the micronucleus bootloader on the ATtiny84. It comes up as an Unknown USB Device, so we'll fix that with a custom driver. Lucky for us, the micronucleus project already comes with one.
 
