@@ -1,5 +1,3 @@
-
-
 //Template
 //For Cascadence
 //Developed with Modular Seattle for Velocity 2019
@@ -61,7 +59,7 @@ void loop() {
   
   if(digitalRead(CLK_IN) == LOW)  //we've received a clock pulse!
     {
-      Insert your code here to handle a clock
+      //Insert your code here to handle a clock
       //SendPulse(A); will send a trigger on channel A
       //SendPulse(B); will send a trigger on channel B
 
@@ -112,4 +110,3 @@ void setOutput(byte channel, byte gain, byte shutdown, unsigned int val)
   shiftOut(MOSI,SCK,MSBFIRST,lowByte);
   digitalWrite(PIN_CS, HIGH);
 }
-
