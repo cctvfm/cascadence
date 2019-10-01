@@ -40,7 +40,9 @@ First, [install homebrew](https://brew.sh/) if you haven't already
 then, open a command terminal and enter:
 
 `cd <micronucleus Directory>/commandline`
+
 `brew install libusb-compat`
+
 `make`
 
 Navigate to /commandline. Copy the micronucleus executable in the commandline directory to Arduino/hardware/tools.
