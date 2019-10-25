@@ -31,9 +31,10 @@ const int MOSI = 6;
 const int SCK = 4;
 const int PIN_CS = 5;
 
-unsigned int analog_pots[2][4];
 const int A = 0;
 const int B = 1;
+
+unsigned int lastanalogread[4];
 
 float alpha[2]={0.7,0.7};   // this is the pole location ('time constant') used for the first-order difference equation
 double alpha1[2]={0.9,0.9};  // initial value for attack
@@ -54,6 +55,9 @@ boolean loop_mode=false;
 boolean trigger = false;
 boolean decay[2] = {false,false};
 boolean release_done[2] = {true,true};
+
+
+void update_params(int scan, boolean chan);
 
 // subroutine to set DAC on MCP4802
 void setOutput(byte channel, byte gain, byte shutdown, unsigned int val)
@@ -105,7 +109,7 @@ unsigned int x;
 
 void loop() {
     boolean gate=!digitalRead(gatePin);        // read the gate input every time through the loop
-    update_params(scan,!digitalRead(SW));                      // scan only one of the other inputs each pass 
+    checkforchange(scan);                     // scan only one of the other inputs each pass 
     
     boolean trigger=gate||(loop_mode&&release_done);  // trigger a, ADSR even if there's a gate OR if we're in loop mode
     while(trigger){  
@@ -173,6 +177,24 @@ void loop() {
     if(scan==5){                                     // increment the scan pointer
       scan=0;
     }
+}
+
+void checkforchange (int scan)
+{
+  unsigned int tempread[4];
+  unsigned char x;
+  #define THRESHOLD 5
+  
+    tempread[scan]=analogRead(scan);
+    if(tempread[scan]<(lastanalogread[scan]-THRESHOLD) || tempread[scan]>(lastanalogread[scan]+THRESHOLD))
+    {
+      //knob has been moved while we're on this channel, update it.
+      update_params(scan,!digitalRead(SW));
+      lastanalogread[scan]=tempread[scan];
+      
+    }
+  
+  
 }
 
 void update_params(int scan, boolean chan){             // read the input parameters
